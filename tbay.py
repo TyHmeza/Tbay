@@ -16,5 +16,16 @@ class Item(Base):
 	name = Column(String, nullable=False)
 	description = Column(String)
 	start_time = Column(DateTime, default=datetime.utcnow)
+	
+class User(Base):
+	__tablename__ = "User"
+	id = Column(Integer, primary_key=True)
+	username = Column(String, nullable=False)
+	password = Column(String, nullable=False)
+	
+class Bid(Base):
+	__tablename__ = "Bid"
+	id = Column(Integer, primary_key=True)
+	Price = Column(Integer, nullable=False)
 
 Base.metadata.create_all(engine)
